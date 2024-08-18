@@ -1,7 +1,5 @@
 const { appWithRoutes } = require("../../app");
 const serverless = require("serverless-http");
 
-module.exports = {
-    handler: serverless(appWithRoutes),
-};
+module.exports = serverless(appWithRoutes);
 
