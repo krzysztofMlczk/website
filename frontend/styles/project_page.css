@@ -1,0 +1,137 @@
+.idea {
+  text-transform: uppercase;
+  margin: 10px 0;
+  font-size: 14px;
+  letter-spacing: 1px;
+}
+
+.project-img {
+  max-width: 300px;
+  border-radius: 3px;
+  margin: -10px auto -70px auto;
+}
+
+@media screen and (max-width: 400px) {
+  .project-img {
+    max-width: 180px;
+  }
+}
+
+.project-desc-container {
+  margin: 100px auto 0 auto;
+  width: 50vw;
+  max-width: 900px;
+}
+
+@media screen and (max-width: 991px) {
+  .project-desc-container {
+    width: 60vw;
+  }
+}
+
+@media screen and (max-width: 479px) {
+  .project-desc-container {
+    width: 70vw;
+  }
+}
+
+.desc-label {
+  text-transform: uppercase;
+  font-size: 18px;
+  letter-spacing: 1px;
+  font-weight: 600;
+  margin-bottom: 20px;
+}
+
+.desc {
+  white-space: pre-wrap;
+  font-weight: 300;
+  line-height: 25px;
+  font-size: 18px;
+}
+
+@media screen and (max-width: 620px) {
+  .project-img {
+    max-width: 200px;
+    margin-bottom: 0;
+  }
+
+  .project-desc-container {
+    margin-top: 40px;
+  }
+}
+
+.tech-item {
+  font-weight: 300;
+  margin-left: 50px;
+  line-height: 30px;
+  font-size: 18px;
+}
+
+.low-nav {
+  margin: 0 auto;
+  width: 80vw;
+  max-width: 1000px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+/* ------------------ MEDIUM NAV -------------------- */
+
+.medium-nav-container {
+  text-align: center;
+  max-width: 500px;
+  width: 80vw;
+  margin: 60px auto 30px auto;
+}
+
+/* ------------------ PHOTO GALLERY -------------------- */
+.photo-gallery p {
+  color: #7d8285;
+}
+
+.photo-gallery h2 {
+  font-weight: bold;
+  margin-bottom: 40px;
+  padding-top: 40px;
+  color: inherit;
+}
+
+@media (max-width: 767px) {
+  .photo-gallery h2 {
+    margin-bottom: 25px;
+    padding-top: 25px;
+    font-size: 24px;
+  }
+}
+
+.photo-gallery .intro {
+  font-size: 16px;
+  max-width: 500px;
+  margin: 0 auto 40px;
+}
+
+.photo-gallery .intro p {
+  margin-bottom: 0;
+}
+
+.photo-gallery .photos {
+  padding-bottom: 20px;
+}
+
+.photo-gallery .item {
+  padding-bottom: 30px;
+  transition: all 0.2s ease;
+}
+
+.photo-gallery .item:hover {
+  transform: scale(1.1);
+}
+
+.gallery-container {
+  width: 100vw;
+  max-width: 1200px;
+  padding-left: 5%;
+  padding-right: 5%;
+}

@@ -1,0 +1,42 @@
+.about-hero {
+  min-height: 340px;
+  background-image: linear-gradient(180deg, rgba(0, 0, 0, 0.3) 2%, #222),
+    url("../resources/imgs/landscape.jpg");
+  background-position: center;
+}
+
+.personal-photo {
+  width: 130px;
+  border-radius: 100%;
+  display: block;
+  margin: -100px auto 30px auto;
+}
+
+.about-p {
+  margin: 0 auto 20px auto;
+  font-size: 18px;
+  font-weight: 300;
+  line-height: 25px;
+}
+
+.container {
+  width: 40vw;
+}
+
+.name {
+  text-align: center;
+  margin-bottom: 30px;
+  font-size: 2rem;
+}
+
+@media screen and (max-width: 991px) {
+  .container {
+    width: 60vw;
+  }
+}
+
+@media screen and (max-width: 479px) {
+  .container {
+    width: 70vw;
+  }
+}

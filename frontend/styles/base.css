@@ -1,0 +1,215 @@
+@import url("https://fonts.googleapis.com/css2?family=Lato:wght@300;400;700;900&display=swap");
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-family: "Lato", sans-serif;
+  font-size: 14px;
+  font-weight: 400;
+  color: white;
+  scroll-behavior: smooth;
+}
+
+body {
+  background-color: #222;
+}
+
+/* --------------- NAVIGATION BAR --------------- */
+.nav-bar {
+  z-index: 100;
+  position: fixed;
+  top: 0;
+  width: 100%;
+  background-color: rgba(34, 34, 34, 0.43);
+}
+
+.nav-container {
+  width: 990px;
+  margin: 0 auto;
+  display: flex;
+  justify-content: flex-end;
+}
+
+.nav-menu {
+  display: flex;
+  flex-direction: row;
+  list-style: none;
+  overflow: hidden;
+}
+
+.nav-item {
+  padding: 20px;
+  cursor: pointer;
+}
+
+.nav-link {
+  padding: 20px;
+  text-decoration: none;
+  text-transform: uppercase;
+  font-size: 14px;
+  color: #00d6b4;
+  letter-spacing: 1px;
+  transition: all 0.2s ease;
+}
+
+.nav-link:hover {
+  color: white;
+}
+
+.burger {
+  font-size: 20px;
+  padding: 20px;
+  display: none;
+  cursor: pointer;
+}
+
+@media screen and (max-width: 991px) {
+  .nav-container {
+    width: 728px;
+  }
+
+  .nav-menu {
+    background-color: rgba(34, 34, 34, 0.43);
+    max-height: 0;
+    width: 100vw;
+    flex-direction: column;
+    position: absolute;
+    top: 60px;
+    left: 0;
+    padding: 0 20px;
+    transition: max-height 0.7s ease;
+  }
+
+  .open {
+    max-height: 200px;
+  }
+
+  .burger {
+    display: block;
+  }
+}
+
+@media screen and (max-width: 728px) {
+  .nav-container {
+    margin: 0;
+    max-width: 100vw;
+  }
+}
+
+.home-link {
+    position: fixed;
+    top: 0;
+    left: 0;
+}
+
+/* --------------- HERO SECTION --------------- */
+.hero-section {
+  min-height: 540px;
+  background-image: linear-gradient(180deg, rgba(0, 0, 0, 0.3) 2%, #222),
+    url("../resources/imgs/see_sunset.jpg");
+  background-position: 0 0, 100% 0;
+  background-size: cover;
+  display: flex;
+  align-items: center;
+}
+
+.headline {
+  font-weight: 300;
+  font-size: 3.5rem;
+  margin-bottom: 40px;
+}
+
+.subtitle {
+  font-size: 2rem;
+  font-weight: 300;
+}
+
+section {
+  padding: 50px 0;
+}
+
+.with-separation {
+  border-top: 1px solid rgba(255, 255, 255, 0.15);
+}
+
+.bold-it {
+  font-style: italic;
+  font-size: inherit;
+  font-weight: 400;
+}
+
+.container {
+  margin: 0 auto;
+  width: 50vw;
+  max-width: 900px;
+}
+
+.center-txt {
+  text-align: center;
+}
+
+.btn-default {
+  text-decoration: none;
+  background-color: transparent;
+  text-transform: uppercase;
+  font-weight: 300;
+  padding: 9px 25px;
+  border: 1px solid #00d6b4;
+  color: #00d6b4;
+  border-radius: 3px;
+  transition: all 0.2s ease;
+  cursor: pointer;
+}
+
+.btn-default i {
+  color: inherit;
+  margin-right: 8px;
+}
+
+.btn-default:hover {
+  text-decoration: none;
+  border: 1px solid white;
+  color: white;
+}
+
+@media screen and (max-width: 768px) {
+  .headline {
+    font-size: 3rem;
+  }
+
+  .subtitle {
+    font-size: 1.5rem;
+  }
+}
+
+@media screen and (max-width: 479px) {
+  .headline {
+    font-size: 2.5rem;
+  }
+
+  .subtitle {
+    font-size: 1.3rem;
+  }
+}
+
+/* ----------------- FOOTER ------------------- */
+
+footer {
+  padding: 30px 0;
+}
+
+footer p {
+  font-size: 14px;
+  color: rgb(155, 155, 155);
+  margin-bottom: 5px;
+}
+
+footer h1 {
+  font-size: 16px;
+}
+
+footer i {
+  font-size: 20px;
+  margin: 20px 10px 0 10px;
+}

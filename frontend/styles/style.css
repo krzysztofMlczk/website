@@ -1,0 +1,686 @@
+@import url("./variables.css");
+@import url("https://fonts.googleapis.com/css2?family=Poppins:wght@100;200;300;400;500;600;700;800;900&family=Roboto+Mono:wght@300;400;500;600;700&family=RocknRoll+One&display=swap");
+
+/* ----------------- GENERAL ------------------------ */
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-family: "Poppins", sans-serif;
+  font-weight: 400;
+  color: var(--text-color);
+  scroll-behavior: smooth;
+}
+
+body {
+  overflow-y: hidden; /* hide during page load */
+  background-color: var(--bg-dark);
+}
+
+section.light {
+  background-color: var(--bg-light);
+}
+
+section.dark,
+footer.dark {
+  background-color: var(--bg-dark);
+}
+
+section.dark-light {
+  background: linear-gradient(180deg, var(--bg-dark) 50%, var(--bg-light) 50%);
+}
+
+.container {
+  width: 75vw;
+  max-width: 1000px;
+  margin: 0 auto;
+}
+
+.grid-col {
+  display: grid;
+  grid-template-columns: 1fr;
+}
+
+.col-pos-rel {
+  position: relative;
+}
+
+.col-padded {
+  padding: 3rem 0;
+}
+
+h3.title-dash {
+  font-size: 1rem;
+  font-weight: 500;
+  font-family: "Roboto Mono", monospace;
+  opacity: 0.6;
+  letter-spacing: 0.1rem;
+  margin-bottom: 1rem;
+}
+
+h2.title {
+  font-size: 1.7rem;
+  font-weight: 500;
+  line-height: 2.1rem;
+  margin-bottom: 1.8rem;
+}
+
+p.simple-text {
+  font-size: 0.9rem;
+  opacity: 0.5;
+  line-height: 1.7rem;
+  margin-bottom: 2rem;
+}
+
+a.simple-link {
+  text-decoration: none;
+  font-size: 1.2rem;
+  letter-spacing: 0.1rem;
+  color: var(--addition-color);
+}
+
+a.simple-link > span {
+  font-weight: 600;
+  text-decoration: underline;
+}
+
+a.simple-link > i {
+  margin-left: 1.5rem;
+}
+
+a.simple-link > span,
+a.simple-link > i {
+  color: var(--addition-color);
+  transition: color 0.2s ease;
+}
+
+a.simple-link:hover > span,
+a.simple-link:hover > i {
+  color: white;
+}
+
+/* ----------------- NAVBAR ------------------------ */
+.nav-bar {
+  background-color: var(--bg-dark);
+  padding: 1rem 0;
+  box-shadow: 0 0 20px #161824;
+  z-index: 20;
+  position: sticky;
+  top: 0;
+}
+
+.nav-flex {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.nav-bar .logo {
+  width: 2rem;
+  display: block;
+}
+
+.nav-bar .burger {
+  font-size: 2rem;
+  cursor: pointer;
+}
+
+.off {
+  display: none;
+}
+
+.nav-bar .nav-links {
+  width: 100vw;
+  background-color: var(--bg-dark);
+  box-shadow: 0 20px 20px -20px #161824;
+  max-height: 0;
+  overflow: hidden;
+  list-style: none;
+  position: absolute;
+  top: 4rem;
+  left: 0;
+  transition: max-height 0.3s ease-in;
+}
+
+/* class for opened menu */
+.nav-links.opened {
+  max-height: 187.2px;
+}
+
+.nav-links a {
+  /* we need block to set working padding */
+  display: block;
+  text-decoration: none;
+  padding: 1.2rem 12.5vw;
+  transition: color 0.2s ease;
+}
+
+.nav-links a:hover {
+  color: var(--addition-color);
+}
+
+/* ----------------- INTRO ------------------------ */
+#intro .social-media-row {
+  display: none;
+}
+
+.hero-img {
+  width: 100%;
+  mask-image: linear-gradient(
+    to top,
+    rgba(0, 0, 0, 0) 0%,
+    rgba(0, 0, 0, 1) 20%
+  );
+  -webkit-mask-image: linear-gradient(
+    to top,
+    rgba(0, 0, 0, 0) 0%,
+    rgba(0, 0, 0, 1) 20%
+  );
+}
+
+.page-title {
+  z-index: 10;
+  position: absolute;
+  bottom: 10%;
+  font-size: 2.7rem;
+  font-weight: 700;
+  letter-spacing: 0.2rem;
+  line-height: 2.7rem;
+  text-shadow: 1px 1px 3px black;
+}
+
+.page-title::after {
+  content: "";
+  height: 10px;
+  width: 25vw;
+  max-width: 80px;
+  background: var(--addition-color);
+  display: block;
+  transform: translateY(10px);
+}
+
+/* -------------- ABOUT ---------------------------- */
+
+.about-img {
+  width: 50%;
+  display: block;
+  margin: 2rem auto 0 auto;
+  border-radius: 100%;
+}
+
+p.quote-symbol {
+  font-size: 5rem;
+  line-height: 2.5rem;
+  opacity: 0.3;
+  font-family: "RocknRoll One", sans-serif;
+}
+
+.social-media-row {
+  font-size: 1.25rem;
+  text-align: center;
+  padding-bottom: 3rem;
+}
+
+.social-media-row a {
+  text-decoration: none;
+}
+
+.social-media-row i {
+  color: var(--addition-color);
+  margin: 1.25rem 0.65rem 0 0.65rem;
+}
+
+/* ----------------- INTERESTS ------------------- */
+
+.tile {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  width: 75vw;
+  height: 75vw;
+  max-width: 280px;
+  max-height: 280px;
+  margin: 2rem auto;
+  background-color: var(--bg-light);
+  box-shadow: 0 0 20px var(--bg-dark);
+}
+
+.tile.bright {
+  background-color: var(--addition-color);
+}
+
+.tile-grid {
+  width: 60%;
+  display: grid;
+  grid-template-columns: 1fr 2fr;
+}
+
+.tile i {
+  font-size: 1.5rem;
+  text-align: center;
+}
+
+.tile .title {
+  margin-bottom: 0;
+}
+
+/* ---------------- TECHNOLOGIES ------------------ */
+
+.tech-grid {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  grid-gap: 3rem;
+  text-align: center;
+  padding: 3rem 0;
+}
+
+.tech-grid i {
+  font-size: 4rem;
+}
+
+/* -------------- PORTFOLIO -------------------------- */
+
+#portfolio {
+  padding-bottom: 3rem;
+}
+
+#portfolio .simple-text {
+  display: none;
+}
+
+.projects-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+  grid-gap: 1.7rem;
+  padding: 1rem 0 3rem 0;
+}
+
+.projects-grid div {
+  overflow: hidden;
+  box-shadow: 0 0 20px var(--bg-dark);
+}
+
+.projects-grid img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  cursor: pointer;
+  transition: all 0.2s ease;
+}
+
+.projects-grid img:hover {
+  transform: scale(1.1);
+}
+
+/* -------------------- CONTACT ----------------------------------- */
+
+#contact {
+  padding: 4rem 0 3rem 0;
+}
+
+.contact-item {
+  text-align: center;
+  padding: 1.7rem 0;
+}
+
+.contact-icon {
+  font-size: 2.2rem;
+}
+
+.contact-text {
+  opacity: 0.4;
+  font-size: 0.8rem;
+}
+
+/* -------------------- FOOTER ----------------------------------- */
+
+footer {
+  padding-bottom: 3rem;
+  text-align: center;
+}
+
+footer .logo {
+  width: 2rem;
+  margin-bottom: 0.8rem;
+}
+
+footer .text {
+  font-weight: 600;
+  font-size: 0.8rem;
+}
+
+footer .text span {
+  font-weight: normal;
+  opacity: 0.4;
+}
+
+/* -------------------- LOADER ----------------------------------- */
+
+.loader-overlay {
+  z-index: 1000;
+  width: 100%;
+  height: 100%;
+  position: absolute;
+  top: 0;
+  left: 0;
+  background-color: var(--bg-dark);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  opacity: 1;
+}
+
+.loader-overlay.hidden {
+  visibility: hidden;
+  opacity: 0;
+  transition: visibility 0s 0.17s, opacity 0.17s linear;
+}
+
+.loader {
+  display: inline-block;
+  width: 40px;
+  height: 40px;
+  position: relative;
+  border: 4px solid var(--addition-color);
+  border-radius: 0 50% 50% 50%;
+  overflow: hidden;
+  animation: loader 2s infinite ease;
+}
+
+.loader-inner {
+  vertical-align: top;
+  display: inline-block;
+  width: 100%;
+  background-color: var(--addition-color);
+  animation: loader-inner 2s infinite ease-in;
+}
+
+@keyframes loader {
+  0% {
+    transform: rotate(0deg);
+  }
+
+  25% {
+    transform: rotate(180deg);
+  }
+
+  50% {
+    transform: rotate(180deg);
+  }
+
+  75% {
+    transform: rotate(360deg);
+  }
+
+  100% {
+    transform: rotate(360deg);
+  }
+}
+
+@keyframes loader-inner {
+  0% {
+    height: 0%;
+  }
+
+  25% {
+    height: 0%;
+  }
+
+  50% {
+    height: 100%;
+  }
+
+  75% {
+    height: 100%;
+  }
+
+  100% {
+    height: 0%;
+  }
+}
+
+/* MEDIUM SCREEN */
+
+@media screen and (min-width: 768px) {
+  /* -------------- GENERAL --------------- */
+  .grid-col {
+    grid-template-columns: 1fr 1fr;
+    grid-gap: 3rem;
+  }
+
+  /* -------------- NAVBAR --------------- */
+  .nav-bar .logo {
+    width: 2.5rem;
+  }
+
+  .nav-bar .burger {
+    font-size: 2.5rem;
+  }
+
+  /* -------------- INTRODUCTION --------------- */
+  #intro .col-padded {
+    padding: 5rem 0;
+  }
+
+  .hero-img {
+    padding-top: 0;
+  }
+
+  /* -------------- ABOUT --------------- */
+  #about .col-padded,
+  #about .col {
+    padding: 4rem 0 3rem 0;
+  }
+
+  .about-img {
+    width: 100%;
+    border-radius: 0;
+    margin-top: 1.5rem;
+  }
+
+  /* -------------- INTERESTS --------------- */
+  #interests .grid-col {
+    grid-template-columns: 1fr 1fr 1fr;
+  }
+
+  .tile {
+    width: 20vw;
+    height: 20vw;
+    margin: 2rem auto 4rem auto;
+  }
+
+  .tile .title {
+    font-size: 1.2rem;
+    line-height: 1.4rem;
+  }
+
+  .tile i {
+    font-size: 1.2rem;
+  }
+
+  .tile-grid {
+    grid-gap: 0.5rem;
+  }
+
+  /* -------------- TECHNOLOGIES --------------- */
+  .tech-grid {
+    grid-template-columns: 1fr 1fr 1fr;
+    padding: 3rem 0 5rem 0;
+  }
+
+  /* -------------- PORTFOLIO --------------- */
+  #portfolio .grid-col {
+    grid-template-columns: 1fr;
+    grid-gap: 0rem;
+  }
+
+  /* -------------- CONTACT --------------- */
+  #contact .grid-col {
+    grid-template-columns: 1fr 1fr 1fr;
+  }
+}
+
+/* LARGE SCREEN */
+@media screen and (min-width: 992px) {
+  /* -------------- NAVBAR --------------- */
+  .nav-bar {
+    box-shadow: 0 0 20px var(--bg-dark);
+    position: relative;
+  }
+
+  .nav-bar .burger {
+    display: none;
+  }
+
+  .nav-bar .nav-links {
+    width: auto;
+    box-shadow: none;
+    position: static;
+    max-height: none;
+  }
+
+  .nav-links li {
+    /* display links in one line */
+    display: inline-block;
+  }
+
+  .nav-links a {
+    padding: 1rem;
+  }
+
+  .nav-bar .nav-links {
+    font-size: 1.2rem;
+  }
+
+  /* -------------- INTRODUCTION --------------- */
+  .page-title {
+    font-size: 3.5rem;
+    line-height: 3.5rem;
+  }
+}
+
+/* EXTRA LARGE SCREEN */
+@media screen and (min-width: 1200px) {
+  /* -------------- GENERAL -------------------- */
+  h3.title-dash {
+    font-size: 1.2rem;
+  }
+
+  h2.title {
+    font-size: 2rem;
+    line-height: 2.4rem;
+  }
+
+  p.simple-text {
+    font-size: 1.1rem;
+    line-height: 2rem;
+  }
+
+  a.simple-link {
+    font-size: 1.4rem;
+  }
+
+  /* -------------- NAVBAR --------------- */
+  .nav-bar .logo {
+    width: 3.5rem;
+  }
+
+  .nav-bar .nav-links {
+    font-size: 1.5rem;
+  }
+
+  /* -------------- INTRODUCTION --------------- */
+  #intro .grid-col {
+    grid-gap: 5rem;
+  }
+
+  #intro .col-padded {
+    padding: 9rem 0;
+  }
+
+  .page-title {
+    font-size: 3.7rem;
+    line-height: 3.7rem;
+  }
+
+  /* -------------- ABOUT --------------- */
+  #about .col-padded,
+  #about .col {
+    padding: 6rem 0 4.5rem 0;
+  }
+
+  #about .grid-col {
+    grid-gap: 5rem;
+  }
+
+  .social-media-row {
+    font-size: 1.5rem;
+  }
+
+  /* -------------- INTERESTS --------------- */
+  .tile {
+    margin: 3rem auto 5rem auto;
+  }
+
+  .tile .title {
+    font-size: 1.7rem;
+    line-height: 2.1rem;
+  }
+
+  .tile i {
+    font-size: 1.5rem;
+  }
+
+  /* -------------- TECHNOLOGIES --------------- */
+  .tech-grid {
+    padding: 4rem 0 6rem 0;
+    grid-gap: 4rem;
+  }
+}
+
+/* XXL SCREEN */
+@media screen and (min-width: 1400px) {
+  /* -------------- INTRODUCTION --------------- */
+  #intro .grid-col {
+    grid-template-columns: 2fr 1fr;
+  }
+
+  #intro .social-media-row {
+    display: block;
+    position: absolute;
+    top: 40%;
+    font-size: 1.2rem;
+  }
+
+  .hero-img {
+    width: 70%;
+    float: right;
+  }
+
+  .page-title {
+    top: 50%;
+    font-size: 5rem;
+    line-height: 5.5rem;
+  }
+
+  /* -------------- ABOUT --------------- */
+  #about .grid-col {
+    grid-template-columns: 1fr 2fr;
+  }
+
+  /* -------------- PORTFOLIO --------------- */
+  #portfolio .grid-col {
+    grid-template-columns: 1fr 2fr;
+    grid-gap: 5rem;
+  }
+
+  #portfolio .simple-text {
+    display: block;
+  }
+
+  .projects-grid {
+    grid-template-columns: repeat(auto-fit, minmax(150px, 1fr));
+  }
+}
