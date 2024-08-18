@@ -7,7 +7,7 @@ dotenv.config();
 
 const API_KEY = process.env.API_KEY;
 const SERVER = process.env.SERVER;
-const LIST_ID = process.env.LIST_ID;
+// const LIST_ID = process.env.LIST_ID;
 
 mailchimp.setConfig({
   apiKey: API_KEY,
