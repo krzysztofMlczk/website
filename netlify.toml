@@ -1,9 +1,9 @@
 [build]
-  base = "./"
   command = "echo 'Building Functions'"
 [functions]
   external_node_modules = ["express"]
   node_bundler = "esbuild"
+  directory = "./netlify/functions"
 [[redirects]]
   force = true
   from = "*"
