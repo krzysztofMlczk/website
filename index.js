@@ -30,13 +30,15 @@ app.get("/portfolio", (req, res) => {
   res.sendFile(path.resolve("./frontend/pages/portfolio.html"));
 });
 
-app.get("/about", (req, res) => {
-  res.sendFile(path.resolve("./frontend/pages/about.html"));
-});
+// DEPRECATED: about available on home page
+// app.get("/about", (req, res) => {
+//   res.sendFile(path.resolve("./frontend/pages/about.html"));
+// });
 
-app.get("/contact", (req, res) => {
-  res.sendFile(path.resolve("./frontend/pages/contact.html"));
-});
+// DEPRECATED: contact available on home page
+// app.get("/contact", (req, res) => {
+//   res.sendFile(path.resolve("./frontend/pages/contact.html"));
+// });
 
 app.get("/thesis", (req, res) => {
   res.sendFile(path.resolve("./frontend/pages/thesis.pdf"));
@@ -218,12 +220,6 @@ app.get("/projects/go-game", (req, res) => {
   });
 });
 
-app.get("/projects/labora", (req, res) => {
-  res.render(path.resolve("./frontend/pages/views/project_page"), {
-    pageTitle: "Labora",
-  });
-});
-
 app.get("/projects/compiler", (req, res) => {
   const folderPath = "./../resources/projects-imgs/compiler/";
 
@@ -295,29 +291,30 @@ app.get("/projects/car-dealership-system", (req, res) => {
   });
 });
 
-app.post("/submit-contact", (req, res) => {
-  let name = req.body.userName;
-  let email = req.body.userEmail;
-  let msg = req.body.userMsg;
-
-  async function run() {
-    try {
-      const response = await mailchimp.lists.addListMember(LIST_ID, {
-        email_address: email,
-        status: "subscribed",
-        merge_fields: {
-          FNAME: name,
-          LNAME: msg,
-        },
-      });
-    } catch {
-      console.log("Unable to connect to the API");
-    }
-  }
-
-  run();
-  res.redirect("/contact");
-});
+// DEPRECATED: no longer supporting mailchimp mailing list
+// app.post("/submit-contact", (req, res) => {
+//   let name = req.body.userName;
+//   let email = req.body.userEmail;
+//   let msg = req.body.userMsg;
+//
+//   async function run() {
+//     try {
+//       const response = await mailchimp.lists.addListMember(LIST_ID, {
+//         email_address: email,
+//         status: "subscribed",
+//         merge_fields: {
+//           FNAME: name,
+//           LNAME: msg,
+//         },
+//       });
+//     } catch {
+//       console.log("Unable to connect to the API");
+//     }
+//   }
+//
+//   run();
+//   res.redirect("/contact");
+// });
 
 app.listen(port, () => {
   console.log("Server is running on port " + port);
